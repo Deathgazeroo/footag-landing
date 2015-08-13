@@ -1,0 +1,8 @@
+node_modules
+rethinkdb_data
+.DS_Store
+public/images/*
+public/videos/*
+public/fonts/*
+public/stylesheets/.sass-cache/*
+npm-debug.log

@@ -1,0 +1,35 @@
+
+<video class="video hidden-xs hidden-sm hidden-md" autoplay loop poster="../images/background.png" id="bgvid">
+		<source src="../videos/background.mp4" type="video/mp4">
+</video>
+<div class="wrapper hidden-xs hidden-sm hidden-md">
+	<div class="mask">
+		<img class="logo" src="../images/logo.png">
+		<div class="media">
+			<a href="#"><img src="../images/instagram-32.png"></a>
+			<a href="#"><img src="../images/facebook-32.png"></a>
+		</div>
+	
+		<div class="main-text">
+			We are launching in <span> 15 </span> days!
+		</div>
+		<div class="sub-text">
+			Be first to know and get <b>one month free access!</b></br>
+			Enter your email below, and let us do the rest.
+		</div>
+		<form novalidate class="newsletter-form" ng-controller="newsletterCtrl">
+			<input type="email" ng-model="newsletter.email" />
+			<button type="submit" ng-click="save(newsletter)"><b>Submit!</b></button>
+		</form>
+	</div>
+</div>
+
+<div class="mobile visible-xs visible-sm visible-md">
+	<div class="main-text">
+			We are launching in <span> 15 </span> days!
+		</div>
+		<div class="sub-text">
+			Be first to know and get <b>one month free access!</b></br>
+			Enter your email below, and let us do the rest.
+		</div>
+</div>
