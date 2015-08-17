@@ -4,23 +4,36 @@
 </video>
 <div class="wrapper hidden-xs hidden-sm hidden-md">
 	<div class="mask">
+		<div class="col-md-12 row">
 		<img class="logo" src="../images/logo.png">
 		<div class="media">
 			<a href="#"><img src="../images/instagram-32.svg"></a>
 			<a href="#"><img src="../images/facebook-32.svg"></a>
 		</div>
-	
-		<div class="main-text">
-			We are launching in <span> 15 </span> days!
 		</div>
-		<div class="sub-text">
-			Be first to know and get <b>one month free access!</b></br>
-			Enter your email below, and let us do the rest.
+
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<div class="main-text row">
+			We are launching in <span> 15 </span> days!</br></br>
+			</div>
+			<div class="row"></div>
+			<div class="sub-text row">Be first to know and get <b>one month free access!</b></br>
+			Enter your email below, and let us do the rest.</br></div>
+			<div class="row"></div>
+			<form name="myForm" novalidate class="newsletter-form" ng-controller="newsletterCtrl">
+			<input class="row" name="input" ng-class="{ 'inputerror': myForm.input.$error.email , 'inputreq': myForm.input.$error.required }" type="email" ng-model="newsletter.email" required>
+			<div class="row"></div>
+				<div role="alert">
+      				<span class="error" ng-show="myForm.input.$error.required">
+        			EMAIL REQUIRED!</span>
+      				<span class="error" ng-show="myForm.input.$error.email">
+        			NOT VALID EMAIL ADDRESS!</span>
+    			</div>
+			<button disabled="{{myForm.input.$error.required}}" class="row" type="submit" ng-click="save(newsletter)"><b>Submit!</b></button>
+			</form>
 		</div>
-		<form novalidate class="newsletter-form" ng-controller="newsletterCtrl">
-			<input type="email" ng-model="newsletter.email" />
-			<button type="submit" ng-click="save(newsletter)"><b>Submit!</b></button>
-		</form>
+		<div class="col-md-3"></div>
 	</div>
 </div>
 

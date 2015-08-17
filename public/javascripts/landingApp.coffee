@@ -4,6 +4,10 @@ angular.module 'landingApp', ['ngRoute']
   return
 
 .controller 'newsletterCtrl', ['$scope', '$http', ($scope, $http) ->
+  $scope.newsletter = {
+    email: 'me@example.com'
+  }
+
   $scope.save = (email) ->
     $http.post '/newsletter', email
     .success (result) ->
