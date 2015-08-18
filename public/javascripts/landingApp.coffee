@@ -6,13 +6,18 @@ angular.module 'landingApp', ['ngRoute']
 .controller 'newsletterCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.newsletter = {
     email: 'me@example.com'
+    confirmed: false
   }
+
+  $scope.close = () ->
+    $scope.newsletter.confirmed = false
+    return
 
   $scope.save = (email) ->
     $http.post '/newsletter', email
     .success (result) ->
       if (result == "OK")
-        alert("Your email was saved successfully!")
+        $scope.newsletter.confirmed = true
       return
     return
   return

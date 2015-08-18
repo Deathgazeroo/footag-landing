@@ -2,7 +2,17 @@
 <video class="video hidden-xs hidden-sm hidden-md" autoplay loop poster="../images/background.png" id="bgvid">
 		<source src="../videos/background.mp4" type="video/mp4">
 </video>
-<div class="wrapper hidden-xs hidden-sm hidden-md">
+<div class="wrapper hidden-xs hidden-sm hidden-md" ng-controller="newsletterCtrl">
+	<div class="confirmation" ng-show="newsletter.confirmed">
+		<div class="popup">
+			<div class="message" ng-click="close()">
+				<div class="text">
+					Thank you for signing in!</br>
+					Check your e-mail to confirm!
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="mask">
 		<div class="col-md-12 row">
 		<img class="logo" src="../images/logo.png">
@@ -21,7 +31,7 @@
 			<div class="sub-text row">Be first to know and get <b>one month free access!</b></br>
 			Enter your email below, and let us do the rest.</br></div>
 			<div class="row"></div>
-			<form name="myForm" novalidate class="newsletter-form" ng-controller="newsletterCtrl">
+			<form name="myForm" novalidate class="newsletter-form">
 			<input class="row" name="input" ng-class="{ 'inputerror': myForm.input.$error.email , 'inputreq': myForm.input.$error.required }" type="email" ng-model="newsletter.email" required>
 			<div class="row"></div>
 				<div role="alert">
@@ -30,7 +40,8 @@
       				<span class="error" ng-show="myForm.input.$error.email">
         			NOT VALID EMAIL ADDRESS!</span>
     			</div>
-			<button disabled="{{myForm.input.$error.required}}" class="row" type="submit" ng-click="save(newsletter)"><b>Submit!</b></button>
+			<button class="row" type="submit" ng-click="save(newsletter)"><b>Submit!</b></button>
+			<!--disabled="{{myForm.input.$error.required}}" -->
 			</form>
 		</div>
 		<div class="col-md-3"></div>
